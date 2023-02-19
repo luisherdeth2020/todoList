@@ -1,47 +1,24 @@
-const express = require('express');
-const todoSchema = require('../models/todo');
+import express from 'express';
+import { todoSchema } from '../models/todo.js';
+import {
+	createNewController,
+	deleteTodoController,
+	getController,
+	getLineController,
+} from '../controllers/newController.js';
 
 const router = express.Router();
 
 // create Todo
-router.post('/new', (req, res) => {
-	const todo = todoSchema(req.body);
-
-	todo.save()
-		// retorna
-		.then((data) => res.json(data))
-		.catch((error) => res.json({ message: error }));
-});
+router.post('/new', createNewController);
 
 // get all Todos
-router.get('/todos', (req, res) => {
-	// objeto Schema
-	todoSchema
-
-		.find()
-		.then((data) => res.json(data))
-		.catch((error) => res.json({ message: error }));
-});
+router.get('/todos', getController);
 
 //Delete Todo
-router.delete('/todos/delete/:id', (req, res) => {
-	const { id } = req.params;
-	todoSchema
-
-		.remove({ _id: id })
-		.then((data) => res.json(data))
-		.catch((error) => res.json({ message: error }));
-});
+router.delete('/todos/delete/:id', deleteTodoController);
 
 //Line through Todo
-router.put('/todos/complete/:id', async (req, res) => {
-	const todo = await todoSchema.findById(req.params.id);
+router.get('/todos/complete/:id', getLineController);
 
-	todo.complete = !todo.complete;
-	todo
-		.save()
-		.then((data) => res.json(data))
-		.catch((error) => res.json({ message: error }));
-});
-
-module.exports = router;
+export default router;

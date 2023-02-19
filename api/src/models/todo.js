@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const todoSchema = mongoose.Schema({
+export  const todoSchema = mongoose.Schema({
 	text: {
 		type: 'string',
 		required: true,
@@ -15,4 +15,4 @@ const todoSchema = mongoose.Schema({
 	},
 });
 
-module.exports = mongoose.model('Todo', todoSchema);
+
