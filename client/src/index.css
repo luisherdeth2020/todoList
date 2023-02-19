@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Quando&family=Questrial&display=swap');
+
 :root {
 	--primary: #d81e5b;
 	--secondary: #8a4efc;
 	--light: #eee;
+	--btn:#af1e2d;
 	--light-alt: #61759b;
 	--dark: #131a26;
 	--dark-alt: #202b3e;
@@ -11,7 +14,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Fira Sans', sans-serif;
+	font-family: 'Questrial', sans-serif;
 }
 
 body {
@@ -27,6 +30,7 @@ h1 {
 	font-size: 40px;
 	font-weight: 700;
 	margin-bottom: 32px;
+	font-family: 'Kanit', sans-serif;
 }
 
 h4 {
@@ -35,6 +39,7 @@ h4 {
 	text-transform: uppercase;
 	font-weight: 400;
 	margin-bottom: 16px;
+	font-family: 'Quando', serif;
 }
 .todo {
 	position: relative;
@@ -43,6 +48,7 @@ h4 {
 	border-radius: 16px;
 	display: flex;
 	align-items: center;
+	text-align: center;
 	cursor: pointer;
 	margin-bottom: 16px;
 	transition: 0.5s;
@@ -87,10 +93,164 @@ h4 {
 	width: 24px;
 	height: 24px;
 	border-radius: 50%;
-	background-color: #af1e2d;
+	background-color: var(--btn);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-weight: 700;
+	font-weight: 600;
+}
 
+.addPopup {
+	position: fixed;
+	bottom: 32px;
+	right: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 64px;
+	height: 64px;
+	font-size: 2rem;
+	font-weight: bold;
+	color: var(--light);
+	cursor: pointer;
+	background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+	background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
+background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+background-image: linear-gradient(to top, #c71d6f 0%, #d09693 100%);
+background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	border-radius: 50%;
+}
+
+.popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	max-width: 400px;
+	background-color: var(--dark);
+	padding: 32px;
+	border-radius: 16px;
+	box-shadow: 0px 3px 24px var(--dark);
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%);
+	-moz-transform: translate(-50%);
+	-ms-transform: translate(-50%);
+	-o-transform: translate(-50%);
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	-ms-border-radius: 16px;
+	-o-border-radius: 16px;
+}
+.closePopup {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	width: 24px;
+	height: 24px;
+	font-size: 1.5rem;
+	color: var(--light);
+	cursor: pointer;
+	/* background-color: var(--btn); */
+	background-image: linear-gradient(to top, #c71d6f 0%, #d09693 100%);
+	background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+	background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+}
+.popup h3 {
+	color: var(--light);
+	margin-bottom: 16px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.add-todo-input {
+	appearance: none;
+	border: 1px solid var(--light);
+	outline: none;
+	color: var(--light);
+	background: transparent;
+	padding: 16px;
+	box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.2);
+	width: 100%;
+	font-size: 1.3rem;
+	border-radius: 16px;
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	-ms-border-radius: 16px;
+	-o-border-radius: 16px;
+}
+
+.button {
+	padding: 1rem 2rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 1rem;
+	margin-top: 1em;
+	/* text-align: center; */
+	cursor: pointer;
+	background-image: linear-gradient(to right, var(--primary), var(--secondary));
+	background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
+	background-image: linear-gradient(to top, #c71d6f 0%, #d09693 100%);
+	background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+	background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+	background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+	background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+	
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	display: inline-block;
+	border-radius: 1em;
+	-webkit-border-radius: 1rem;
+	-moz-border-radius: 1rem;
+	-ms-border-radius: 1rem;
+	-o-border-radius: 1rem;
 }

@@ -1,7 +1,7 @@
 // import reactLogo from './assets/react.svg';
 import { useEffect, useState } from 'react';
 
-const API_BASE = 'http://localhost:9000';
+const API_BASE = 'https://http-nodejs-production-7907.up.railway.app';
 function App() {
 	const [todos, setTodos] = useState([]);
 	const [popupActive, setPopupActive] = useState(false);
@@ -40,6 +40,20 @@ function App() {
 
 		setTodos(data);
 	};
+
+	const addTodo = async () => {
+		const res = await fetch(API_BASE + '/api/new', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ text: newTodo }),
+		});
+		const data = await res.json();
+		setTodos([...todos, data]);
+		setPopupActive(false);
+		setNewTodo("")
+	};
 	return (
 		<div className="App">
 			<h1>Welcome, Luis</h1>
@@ -54,11 +68,35 @@ function App() {
 						<div className="checkbox"></div>
 						<div className="text">{todo.text}</div>
 						<div className="delete-todo" onClick={() => deleteTodo(todo._id)}>
-							x
+							X
 						</div>
 					</div>
 				))}
 			</div>
+			<div className="addPopup" onClick={() => setPopupActive(true)}>
+				+
+			</div>
+			{popupActive ? (
+				<div className="popup">
+					<div className="closePopup" onClick={() => setPopupActive(false)}>
+						X
+					</div>
+					<div className="content">
+						<h3>Add Task</h3>
+						<input
+							type="text"
+							className="add-todo-input"
+							onChange={(e) => setNewTodo(e.target.value)}
+							value={newTodo}
+						/>
+						<div className="button" onClick={addTodo}>
+							Create Task
+						</div>
+					</div>
+				</div>
+			) : (
+				''
+			)}
 		</div>
 	);
 }
