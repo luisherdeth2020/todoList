@@ -1,5 +1,5 @@
 import express from 'express';
-import { todoSchema } from '../models/todo.js';
+// import { todoSchema } from '../models/todo.js';
 import {
 	createNewController,
 	deleteTodoController,

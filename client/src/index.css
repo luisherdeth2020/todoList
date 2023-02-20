@@ -4,7 +4,7 @@
 	--primary: #d81e5b;
 	--secondary: #8a4efc;
 	--light: #eee;
-	--btn:#af1e2d;
+	--btn: #af1e2d;
 	--light-alt: #61759b;
 	--dark: #131a26;
 	--dark-alt: #202b3e;
@@ -114,25 +114,12 @@ h4 {
 	color: var(--light);
 	cursor: pointer;
 	background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
-	background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
-background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
-background-image: linear-gradient(to top, #c71d6f 0%, #d09693 100%);
-background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
-background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
-background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+	background-image: linear-gradient(to top, #c71d6f 0%, #d09693 100%);
+	background-image: linear-gradient(-225deg, #a445b2 0%, #d41872 52%, #ff0066 100%);
+	background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+	background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
 
 	border-radius: 50%;
 }
@@ -168,23 +155,19 @@ background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
 	cursor: pointer;
 	/* background-color: var(--btn); */
 	background-image: linear-gradient(to top, #c71d6f 0%, #d09693 100%);
-	background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
-	background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
-background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
-background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+	background-image: linear-gradient(-225deg, #a445b2 0%, #d41872 52%, #ff0066 100%);
+	background-image: linear-gradient(
+		to right,
+		#ff8177 0%,
+		#ff867a 0%,
+		#ff8c7f 21%,
+		#f99185 52%,
+		#cf556c 78%,
+		#b12a5b 100%
+	);
+	background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+	background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
 
-
-
-
-
-
-
-
-
-
-
-
-	
 	border-radius: 50%;
 	display: flex;
 	justify-content: center;
@@ -224,33 +207,35 @@ background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
 	text-transform: uppercase;
 	font-size: 1rem;
 	margin-top: 1em;
-	/* text-align: center; */
 	cursor: pointer;
 	background-image: linear-gradient(to right, var(--primary), var(--secondary));
-	background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
+	
 	background-image: linear-gradient(to top, #c71d6f 0%, #d09693 100%);
-	background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
-	background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+	background-image: linear-gradient(-225deg, #a445b2 0%, #d41872 52%, #ff0066 100%);
+	background-image: linear-gradient(
+		to right,
+		#ff8177 0%,
+		#ff867a 0%,
+		#ff8c7f 21%,
+		#f99185 52%,
+		#cf556c 78%,
+		#b12a5b 100%
+	);
 	background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
 	background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
-	
-
-
-
-
-
-
-
-
-
-
-	
-	
-	
 	display: inline-block;
 	border-radius: 1em;
 	-webkit-border-radius: 1rem;
 	-moz-border-radius: 1rem;
 	-ms-border-radius: 1rem;
 	-o-border-radius: 1rem;
+}
+
+@media (max-width: 600px) {
+	.text {
+		max-width: 70%;
+	}
+	.popup {
+		max-width: 380px;
+	}
 }
