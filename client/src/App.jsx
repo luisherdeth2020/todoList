@@ -1,7 +1,7 @@
 // import reactLogo from './assets/react.svg';
 import { useEffect, useState } from 'react';
 
-const API_BASE = 'https://http-nodejs-production-7907.up.railway.app';
+const API_BASE = 'https://todolistapi.up.railway.app';
 function App() {
 	const [todos, setTodos] = useState([]);
 	const [popupActive, setPopupActive] = useState(false);
